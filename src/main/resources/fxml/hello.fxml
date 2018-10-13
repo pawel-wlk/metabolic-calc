@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import layouttests.migfxml.sample1.*?>
+
+<MigPane id="rootPane" fx:controller="pawelwlk.metabolic.HelloController"
+        styleClass="main-panel"
+        layout="insets 20"
+        cols="[label, pref!][grow, 50::]"
+        rows=""
+        xmlns:fx="http://javafx.com/fxml">
+
+    <Label text="Height:" /> <TextField fx:id="heightField" prefColumnCount="30" MigPane.cc="growx, wrap" />
+    <Label text="Weight:" />	<TextField fx:id="weightField" prefColumnCount="30" MigPane.cc="growx, wrap" />
+    <Label text="Age:" />	<TextField fx:id="ageField" prefColumnCount="30" MigPane.cc="growx, wrap" />
+    <Label text="Sex:" />	<TextField fx:id="sexField" prefColumnCount="30" MigPane.cc="growx, wrap" />
+    <Label text="Activity Level:" />	<TextField fx:id="activityField" prefColumnCount="30" MigPane.cc="growx, wrap" />
+
+    <Button text="Calculate BMI" onAction="#sayHello" MigPane.cc="skip, gap :push, gaptop 15, wrap" />
+    <Button text="Calculate BMR" onAction="#sayHello" MigPane.cc="skip, gap :push, gaptop 15, wrap" />
+    <Button text="Calculate TMR" onAction="#sayHello" MigPane.cc="skip, gap :push, gaptop 15, wrap" />
+
+    <Label fx:id="messageLabel" styleClass="hello-message" MigPane.cc="span, growx, gaptop 15" />
+
+</MigPane >

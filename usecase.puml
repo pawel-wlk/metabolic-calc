@@ -1,0 +1,8 @@
+@startuml
+
+User -> (Calculate the BMI)
+User --> (Calculate Basic Metabolic Rate)
+User --> (Calculate Total Metabolic Rate)
+
+
+@enduml
