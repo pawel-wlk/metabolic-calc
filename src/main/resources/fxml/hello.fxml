@@ -2,27 +2,39 @@
 
 <?import java.lang.*?>
 <?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
-<?import layouttests.migfxml.sample1.*?>
 
-<MigPane id="rootPane" fx:controller="pawelwlk.metabolic.HelloController"
-        styleClass="main-panel"
-        layout="insets 20"
-        cols="[label, pref!][grow, 50::]"
-        rows=""
-        xmlns:fx="http://javafx.com/fxml">
 
-    <Label text="Height:" /> <TextField fx:id="heightField" prefColumnCount="30" MigPane.cc="growx, wrap" />
-    <Label text="Weight:" />	<TextField fx:id="weightField" prefColumnCount="30" MigPane.cc="growx, wrap" />
-    <Label text="Age:" />	<TextField fx:id="ageField" prefColumnCount="30" MigPane.cc="growx, wrap" />
-    <Label text="Sex:" />	<TextField fx:id="sexField" prefColumnCount="30" MigPane.cc="growx, wrap" />
-    <Label text="Activity Level:" />	<TextField fx:id="activityField" prefColumnCount="30" MigPane.cc="growx, wrap" />
+<ScrollPane id="rootPane" fx:controller="pawelwlk.metabolic.HelloController"
+            styleClass="main-panel"
 
-    <Button text="Calculate BMI" onAction="#sayHello" MigPane.cc="skip, gap :push, gaptop 15, wrap" />
-    <Button text="Calculate BMR" onAction="#sayHello" MigPane.cc="skip, gap :push, gaptop 15, wrap" />
-    <Button text="Calculate TMR" onAction="#sayHello" MigPane.cc="skip, gap :push, gaptop 15, wrap" />
+            xmlns:fx="http://javafx.com/fxml">
+    <VBox>
 
-    <Label fx:id="messageLabel" styleClass="hello-message" MigPane.cc="span, growx, gaptop 15" />
+        <Label text="Height (m):" /> <TextField fx:id="heightField"/>
+        <Label text="Weight (kg):" />	<TextField fx:id="weightField"/>
+        <Label text="Age:" />	<TextField fx:id="ageField"/>
+        <Label text="Sex:" />	<ComboBox fx:id="sexField"/>
+        <Label text="Activity Level:" />	<ComboBox fx:id="activityField"/>
 
-</MigPane >
+        <HBox>
+            <VBox>
+                <Button text="Calculate BMI" onAction="#calculateBMI"/>
+                <Label fx:id="bmiLabel" styleClass="hello-message"/>
+            </VBox>
+
+            <VBox>
+                <Button text="Calculate BMR" onAction="#calculateBMR"/>
+                <Label fx:id="bmrLabel" styleClass="hello-message"/>
+            </VBox>
+
+            <VBox>
+                <Button text="Calculate TMR" onAction="#calculateTMR"/>
+                <Label fx:id="tmrLabel" styleClass="hello-message"/>
+            </VBox>
+
+        </HBox>
+    </VBox>
+
+</ScrollPane>

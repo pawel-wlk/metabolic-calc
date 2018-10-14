@@ -24,10 +24,10 @@ public class Person {
   }
   public double BMR(){
     if (this.sex == Sex.MALE) {
-      return 9.99*weight + 6.25*height + 4.92*age + 5;
+      return 9.99*weight + 625*height + 4.92*age + 5;
     }
     else {
-      return 9.99*weight + 6.25*height + 4.92*age - 161;
+      return 9.99*weight + 625*height + 4.92*age - 161;
     }
   }
   public double TMR(){
