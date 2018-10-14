@@ -5,29 +5,27 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+/**
+ * main appication class for more check out javafx documentation
+ */
 public class MainApp extends Application {
 
-    private static final Logger log = LoggerFactory.getLogger(MainApp.class);
+  public static void main(final String[] args) throws Exception {
+    launch(args);
+  }
 
-    public static void main(String[] args) throws Exception {
-        launch(args);
-    }
+  public void start(final Stage stage) throws Exception {
+    final String fxmlFile = "/fxml/hello.fxml";
 
-    public void start(Stage stage) throws Exception {
-        String fxmlFile = "/fxml/hello.fxml";
-        log.debug("Loading FXML for main view from: {}", fxmlFile);
-        FXMLLoader loader = new FXMLLoader();
-        Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
+    final FXMLLoader loader = new FXMLLoader();
+    final Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
-        log.debug("Showing JFX scene");
-        Scene scene = new Scene(rootNode, 600, 400);
-        scene.getStylesheets().add("/styles/styles.css");
+    final Scene scene = new Scene(rootNode, 600, 400);
+    scene.getStylesheets().add("/styles/styles.css");
 
-        stage.setTitle("Metabolic Calculator");
-        stage.setScene(scene);
-        stage.show();
-    }
+    stage.setTitle("Metabolic Calculator");
+    stage.setScene(scene);
+    stage.show();
+  }
 }
