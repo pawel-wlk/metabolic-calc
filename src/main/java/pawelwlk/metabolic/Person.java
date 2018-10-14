@@ -4,8 +4,8 @@ public class Person {
   private double height;
   private double weight;
   private int age;
-  public Sex sex;
-  public ActivityLevel activity;
+  private Sex sex;
+  private ActivityLevel activity;
 
   public Person(double height, double weight) {
     this.height = height;
@@ -23,27 +23,9 @@ public class Person {
     return weight / (height*height);
   }
   public double BMR(){
-    if (this.sex == Sex.MALE) {
-      return 9.99*weight + 625*height + 4.92*age + 5;
-    }
-    else {
-      return 9.99*weight + 625*height + 4.92*age - 161;
-    }
+    return 9.99*weight + 625*height + 4.92*age + this.sex.value;
   }
   public double TMR(){
-    switch(activity) {
-      case NONE:
-        return 1.2*BMR();
-      case SMALL:
-        return 1.4*BMR();
-      case MEDIUM:
-        return 1.6*BMR();
-      case HIGH:
-        return 1.8*BMR();
-      case VERY_HIGH:
-        return 2.2*BMR();
-      default:
-        return 0;
-    }
+    return activity.value * BMR();
   }
 }

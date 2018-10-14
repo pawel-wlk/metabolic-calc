@@ -1,11 +1,11 @@
 package pawelwlk.metabolic;
 
 public enum Sex {
-  MALE("Male"), FEMALE("Female");
+  MALE(5), FEMALE(-161);
 
-  public String s;
+  public int value;
 
-  Sex(String s) {
-    this.s = s;
+  Sex(int val) {
+    value = val;
   }
 }
