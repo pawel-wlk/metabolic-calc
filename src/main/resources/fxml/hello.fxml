@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 
 
-<ScrollPane id="rootPane" fx:controller="pawelwlk.metabolic.HelloController"
+<ScrollPane id="rootPane" fx:controller="pawelwlk.metabolic.Controller"
             styleClass="main-panel"
 
             xmlns:fx="http://javafx.com/fxml">
@@ -20,21 +20,23 @@
 
         <HBox>
             <VBox>
-                <Button text="Calculate BMI" onAction="#calculateBMI"/>
+                <Button text="Calculate Body Mass Index" onAction="#calculateBMI"/>
                 <Label fx:id="bmiLabel" styleClass="hello-message"/>
             </VBox>
 
             <VBox>
-                <Button text="Calculate BMR" onAction="#calculateBMR"/>
+                <Button text="Calculate Basic Metabolic Rate" onAction="#calculateBMR"/>
                 <Label fx:id="bmrLabel" styleClass="hello-message"/>
             </VBox>
 
             <VBox>
-                <Button text="Calculate TMR" onAction="#calculateTMR"/>
+                <Button text="Calculate Total Metabolic Rate" onAction="#calculateTMR"/>
                 <Label fx:id="tmrLabel" styleClass="hello-message"/>
             </VBox>
 
         </HBox>
+
+        <Label fx:id="exceptionLabel" styleClass="exception-message"/>
     </VBox>
 
 </ScrollPane>
